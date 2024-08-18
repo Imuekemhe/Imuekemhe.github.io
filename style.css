@@ -1,60 +1,90 @@
-body,
-html
-{
-  background-image:url(header.jpg.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100%;
-  font-family:cursive;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
 }
 
-.container
-{
-  height: 100%;
-  width: 100%;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px;
 }
 
-h1{
-  text-transform: capitalize;
-  color: white;
-  text-align: center;
+.calculator {
+    background-color: black;
+    width: 380px;
+    height: 800px;
+    border-radius: 50px;
+    padding: 20px;
+    position: relative;
+    color: white;
 }
 
-hr
-{
-  width: 50px;
-  border: 1PX SOLID orangered;
-  border-radius: 10px;
+.top-container {
+    display: flex;
+    height: 160px;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
-.two
-{
-  text-align: center;
-  margin-top: 150px;
+.value {
+    font-size: 100px;
+    font-weight: 100;
+    height: 130px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    text-align: right;
 }
 
-.row
-{
-margin-top: 13.5%;
+.buttons-container {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
 }
 
-button
-{
-  border-radius: 19px;
-  border-color: orangered;
-  border-width: 0px;
-  padding: 10px;
-  color: white;
-  background-color: orangered;
-  transition: 0.5s;
+.button {
+    height: 68px;
+    width: 68px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    transition: filter .3s;
+    align-items: center;
 }
 
-button:hover
-{
-  transform: scale(1.1);
+.button.function {
+    color: black;
+    background: #a5a5a5;
 }
 
+.button.operator {
+    background: #f1a33c;
+}
 
+.button.number-0 {
+    width: 160px;
+    border-radius: 55px; 
+    justify-content: flex-start;
+    padding-left: 18px;
+    grid-column: 1 / span 2;
+}
 
+.button:active,
+.button:focus {
+    filter: brightness(120%);
+}
+
+.bottom {
+    width: 200px;
+    height: 5px;
+    background: white;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
